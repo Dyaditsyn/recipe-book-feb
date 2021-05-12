@@ -5,7 +5,8 @@ import { HashRouter, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import RecipesPage from './pages/RecipesPage';
-import HomePage from './pages/Homepage';
+import HomePage from './pages/HomePage';
+
 
 class App extends React.Component {
     render() { 

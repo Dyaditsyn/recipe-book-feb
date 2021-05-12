@@ -1,7 +1,7 @@
 import React from 'react';
 import './RecipesPage.css';
 
-class RecipesPage extends Component {
+class RecipesPage extends React.Component {
     constructor(props){
         super(props)
     }
