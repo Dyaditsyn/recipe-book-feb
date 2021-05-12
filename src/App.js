@@ -6,12 +6,15 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import RecipesPage from './pages/RecipesPage';
 import HomePage from './pages/HomePage';
-
+import RecipesNavbar from './components/RecipesNavbar';
 
 class App extends React.Component {
     render() { 
       return (
       <HashRouter>
+        
+        <RecipesNavbar />
+
         <Route exact path="/">
           <HomePage></HomePage>
         </Route>
