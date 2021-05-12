@@ -12,7 +12,7 @@ class App extends React.Component {
     render() { 
       return (
       <HashRouter>
-        
+
         <RecipesNavbar />
 
         <Route exact path="/">
@@ -31,4 +31,5 @@ class App extends React.Component {
       );
   }
 }
+
 export default App;
