@@ -7,6 +7,7 @@ import Signup from './pages/Signup';
 import RecipesPage from './pages/RecipesPage';
 import HomePage from './pages/HomePage';
 import RecipesNavbar from './components/RecipesNavbar';
+import { Container } from 'react-bootstrap';
 
 // App is the main component for our Recipe app
 // State:
@@ -38,19 +39,21 @@ class App extends React.Component {
           activeUser={this.state.activeUser}
           logout={this.logout}/>
         </Route>
-        <Route exact path="/">
-          <HomePage></HomePage>
-        </Route>
-        <Route exact path="/login">
-          <Login></Login>
-        </Route>
-        <Route exact path="/signup">
-          <Signup></Signup>
-        </Route>
-        <Route exact path="/recipes">
-          <RecipesPage 
-          activeUser={this.state.activeUser}></RecipesPage>
-        </Route>
+        <Container>
+          <Route exact path="/">
+            <HomePage></HomePage>
+          </Route>
+          <Route exact path="/login">
+            <Login></Login>
+          </Route>
+          <Route exact path="/signup">
+            <Signup></Signup>
+          </Route>
+          <Route exact path="/recipes">
+            <RecipesPage 
+            activeUser={this.state.activeUser}></RecipesPage>
+          </Route>
+        </Container>
       </HashRouter>
       );
   }

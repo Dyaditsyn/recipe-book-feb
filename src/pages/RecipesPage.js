@@ -6,8 +6,12 @@ class RecipesPage extends React.Component {
         super(props)
     }
     render() {
+        if (! this.props.activeUser) {
+            window.location.href = '/#/login';
+            return null;
+        }
         return (
-            <div сlassName="p-recipes">
+            <div className="p-recipes">
                 I am recipes page
             </div>
         )
