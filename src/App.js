@@ -32,7 +32,7 @@ class App extends React.Component {
       // }
     }
   }
-signup = (newUser) => {
+addUser = (newUser) => {
   this.setState({
     activeUser: newUser,
     allUsers: this.state.allUsers.concat(newUser)
@@ -68,7 +68,7 @@ signup = (newUser) => {
             />
           </Route>
           <Route exact path="/signup">
-            <Signup></Signup>
+            <Signup addUser={this.addUser}/>
           </Route>
           <Route exact path="/recipes">
             <RecipesPage 
