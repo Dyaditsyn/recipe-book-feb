@@ -16,6 +16,7 @@ class Signup extends React.Component {
             pwd: this.state.pwd,
         }
         this.props.addUser(newUserObj)
+        window.location.href="/#/recipes";
     }
     render() {
         return (
@@ -30,7 +31,7 @@ class Signup extends React.Component {
                 <div>
                     <input type="password" placeholder="password" onChange={(e)=>this.setState({pwd:e.target.value})}/>
                 </div>
-                <button onClick={this.createUser}>Sign up</button>
+                <button onClick={this.createUser}>Sign up!</button>
             </div>
         )
     }
