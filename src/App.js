@@ -20,11 +20,24 @@ class App extends React.Component {
   constructor(props){
     super(props);
     let usersData;
-    if ( localStorage['allUsers']) {usersData=localStorage['allUsers'];}
-    else {usersData=userJSON}
+    // if ( localStorage['allUsers']) {usersData=localStorage['allUsers'];}
+    // else {usersData=userJSON}
+
+    // 1) When adding new recipes, we updated localStorage.localRecipes, 
+    // to have all the previous trcipes pluse the new one. We saved this information as a string
+    // 2) When loading the page: We check if we have localStorage info.
+          // if we have, we use the localStorage info and ignore the JSON
+          // if we don't, we simply use the JSON data
+    let recipesData = [];
+    if(localStorage.localRecipes) {
+      recipesData = JSON.parse(localStorage.localRecipes)
+    }
+    else {
+      recipesData = RecipesJSON;
+    }
     this.state = {
       allUsers: usersData,
-      allRecipes: RecipesJSON,
+      allRecipes: recipesData,
       // activeUser: null
       activeUser: {
         id: 1,
@@ -43,6 +56,9 @@ class App extends React.Component {
   }
   addRecipe = (newRecipe) => {
     // NewRecipe in an object name, desc, img, userId, id
+    const localRecipesString = JSON.stringify(this.state.allRecipes.concat(newRecipe));
+    localStorage.localRecipes = localRecipesString;
+
     this.setState({
       allRecipes: this.state.allRecipes.concat(newRecipe)
     })
